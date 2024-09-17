@@ -1,13 +1,22 @@
-function processHW() {
-    // Get values from the form
-    var height = document.getElementById('height').value;
-    var weight = document.getElementById('weight').value;
 
-    // Check if input values are valid
-    if (height <= 0 || weight <= 0) {
-        document.getElementById('output').textContent = 'Please enter valid height and weight!';
-    } else {
-        // Display height and weight
-        document.getElementById('output').textContent = 'Height: ' + height + ' cm, Weight: ' + weight + ' kg';
+
+let btn = document.getElementById('btn')
+let output = document.getElementById('outputtext')
+
+let number = [Math.floor(Math.random() * 100)]
+
+
+btn.addEventListener('click', function (){
+    let input = document.getElementById('userInput').value;
+    if(input == number){
+        output.innerHTML = `you guess right, your number was ${number}`;
+
     }
-}
+    else if(input < number){
+        output.innerHTML = "you guessed too Low!"
+    }
+
+    if(input > number ){
+         output.innerHTML = "you guessed too High!"
+    }
+});
